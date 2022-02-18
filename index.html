@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모멘텀 클론코딩</title>
+    <link rel="stylesheet" href="./resources/css/default.css">
+    <link rel="stylesheet" href="./resources/css/style.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+
+<body>
+    <div id="wrap" class="flex">
+        <div class="grid">
+            <!-- Header -->
+            <div class="top">
+                <div id="clock"></div>
+                <div id="today"></div>
+                <div id="weather">
+                    <span></span>
+                    <span></span>
+                </div>
+                <div id="music">
+                    <span>
+                        MUSIC PLAYER
+                    </span>
+                </div>
+            </div>
+
+            <!-- To do list -->
+            <div class="left flex">
+                <span>TODAY</span>
+                <span>Click and check your to-do-list</span>
+                <div class="to-do-list">
+                    <span></span>
+                    <ul id="list"></ul>
+                </div>
+            </div>
+
+            <!-- Main -->
+            <div class="center flex">
+                <!-- LOGIN -->
+                <form id="login-form" class="hidden">
+                    <input required maxlength="15" type="text" placeholder="What's your name?" />
+                    <input type="submit" value="Login">
+                </form>
+                
+                <!-- GREETING and TODO ENTER -->
+                <div class="hidden">
+                    <span id="greeting">Greeting</span>
+                    <form id="to-do-form">
+                        <input type="text" placeholder="Write a To Do and Press Enter" required>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Sentence -->
+            <div class="right">
+                <div>
+                    <span></span>
+                </div>
+            </div>
+
+            <!-- Quote -->
+            <div class="bottom">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="./resources/js/index.js"></script>
+<script src="./resources/js/color.js"></script>
+<script src="./resources/js/background.js"></script>
+<script src="./resources/js/todo.js"></script>
+<script src="./resources/js/greetings.js"></script>
+<script src="./resources/js/clock.js"></script>
+<script src="./resources/js/sentence.js"></script>
+<script src="./resources/js/quote.js"></script>
+<!-- <script src="./resources/js/weather.js"></script> -->
+
+</html>
