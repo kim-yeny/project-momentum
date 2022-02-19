@@ -120,12 +120,12 @@ html {
 .to-do-list {
     display: none;
     position: absolute;
-    width: 30vw;
+    /* width: 30vw; */
+    width: 500px;
     height: 100%;
-    padding: 20px;
+    padding: 30px 15px 30px 30px;
     box-sizing: border-box;
     z-index: 100;
-
     font-size: 1.7rem;
 }
 
@@ -141,12 +141,61 @@ html {
 
 #list {
     margin-top: 20px;
+    overflow-y: scroll;
+    padding: 0 20px 0 0;
+    box-sizing: border-box;
+}
+
+#list::-webkit-scrollbar {
+    width: 5px;
+}
+
+#list::-webkit-scrollbar-thumb {
+    background-color: var(--text-color);
+    background-clip: padding-box;
 }
 
 #list li {
     font-size: 1.2rem;
-    margin-bottom: 10px;
+    padding: 10px 0;
     font-family: 'SBAggroM';
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    align-items: center;
+
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+#list li div {
+    min-width: fit-content;
+    margin-left: 10px;
+}
+
+#list li button {
+    background-color: transparent;
+    font-family: 'SBAggroB';
+    font-size: 1rem;
+    color: var(--text-sub-color);
+    margin-left: 3px;
+}
+
+#list li textarea {
+    background-color: red;
+    border: none;
+    width: 100%;
+    height: fit-content;
+
+    font-size: 1.2rem;
+    font-family: 'SBAggroM';
+
+    word-wrap: break-word;
+    word-break: break-all;
+
+    resize: none;
 }
 
 /* CENTER */

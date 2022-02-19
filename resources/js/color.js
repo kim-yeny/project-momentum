@@ -5,6 +5,7 @@ const colors = [
     },
     {
         back: '#9E41C5',
+        text: '#000'
     },
     {
         back: '#971958',
@@ -12,6 +13,7 @@ const colors = [
     },
     {
         back: '#E593B8',
+        text: '#000'
     },
     {
         back: '#BC3131',
@@ -19,6 +21,7 @@ const colors = [
     },
     {
         back: '#DB6D4F',
+        text: '#000'
     },
     {
         back: '#F37319',
@@ -26,18 +29,23 @@ const colors = [
     },
     {
         back: '#EAB81B',
+        text: '#000'
     },
     {
         back: '#E3EB49',
+        text: '#000'
     },
     {
         back: '#AEF239',
+        text: '#000'
     },
     {
         back: '#2AC972',
+        text: '#000'
     },
     {
         back: '#00A876',
+        text: '#000'
     },
     {
         back: '#286343',
@@ -45,6 +53,7 @@ const colors = [
     },
     {
         back: '#208980',
+        text: '#000'
     },
     {
         back: '#136096',
@@ -52,6 +61,7 @@ const colors = [
     },
     {
         back: '#5680EC',
+        text: '#000'
     },
     {
         back: '#182CCD',

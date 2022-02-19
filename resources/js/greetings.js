@@ -1,10 +1,18 @@
 const greetings = [
-    'Hi',
-    'Hello',
-    'Hallo',
-    'Welcome',
-    'Bonjour',
-    '반가워요',
+    'Hi,',
+    'Hey,',
+    'Hello,',
+    'Hallo,',
+    'Welcome,',
+    'Bonjour,',
+    '반가워요,',
+    'I love',
+    'I like'
+]
+
+const greetingsSub = [
+    '!',
+    ' :)',
 ]
 
 const loginForm = document.querySelector("#login-form");
@@ -19,6 +27,7 @@ const USERNAME_KEY = 'username';
 
 // Random greeting
 const choseGreeting = greetings[Math.floor(Math.random() * greetings.length)];
+const choseGreetingSub = greetingsSub[Math.floor(Math.random() * greetingsSub.length)];
 
 // Login when click submit BTN
 function onLoginSubmit(e) {
@@ -33,7 +42,7 @@ function onLoginSubmit(e) {
 
 // Print greeting
 function printGreetings(name) {
-    greeting.innerText = `${choseGreeting}, ${name}!`;
+    greeting.innerText = `${choseGreeting} ${name}${choseGreetingSub}`;
     greetingBox.classList.remove(HIDDEN_CLASSNAME);
     toDoBox.classList.remove("logout");
     toDoTitle.innerText = "To Do List";
