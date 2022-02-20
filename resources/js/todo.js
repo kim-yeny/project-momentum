@@ -11,9 +11,33 @@ function saveToDos() {
     localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
 }
 
-function modifyToDo(e) {
-    const span = e.target.parentElement.previousElementSibling;
+function editToDo(e) {
+    console.log('focus');
+
+    const span = e.target;
+    // const span = e.target.parentElement.previousElementSibling;
     span.setAttribute("contenteditable", "true");
+
+    span.focus();
+    span.addEventListener("focusout", e => {
+        console.log(e.target);
+        console.log(e.target.className);
+        console.log(span.nextSibling.firstChild.className);
+
+        if (e.target.className === "btnEdit") {
+            console.log('버튼 클릭');
+        } else {
+            console.log('다른 곳 클릭');
+            span.setAttribute("contenteditable", "false");
+            // return false;
+        }
+    })
+}
+
+function reSaveToDos(e) {
+    console.log('다시 저장');
+    const span = e.target.parentElement.previousElementSibling;
+    span.setAttribute("contenteditable", "false");
 }
 
 function deleteToDo(e) {
@@ -43,10 +67,11 @@ function paintToDo(newTodo) {
     const btnBox = document.createElement("div");
     li.appendChild(btnBox);
 
-    // BTN Modify
-    const btnModify = document.createElement("button");
-    btnModify.innerText = "📝";
-    btnBox.appendChild(btnModify);
+    // BTN Edit
+    const btnEdit = document.createElement("button");
+    btnEdit.innerText = "📝";
+    btnEdit.classList.add("btnEdit");
+    btnBox.appendChild(btnEdit);
 
     // BTN Delete
     const btnDelete = document.createElement("button");
@@ -56,11 +81,14 @@ function paintToDo(newTodo) {
 
     toDoList.appendChild(li);
 
-    // Modify list when click modify BTN
-    btnModify.addEventListener("click", modifyToDo);
+    // Modify list when click edit BTN
+    // btnEdit.addEventListener("click", editToDo);
+    span.addEventListener("click", editToDo);
+    // btnEdit.addEventListener("click", reSaveToDos);
 
     // Delete list when click delete BTN
     btnDelete.addEventListener("click", deleteToDo);
+
 }
 
 function handleToDoSubmit(e) {

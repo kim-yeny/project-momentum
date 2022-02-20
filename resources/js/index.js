@@ -10,12 +10,10 @@ const toDoBox = document.querySelector(".to-do-list");
 
 // Open To-Do-List when click to left side
 left.addEventListener("click", function () {
-    console.log('open');
     toDoBox.classList.add("active");
 });
 
 // Close To-Do-List when click to center area
 center.addEventListener("click", function () {
-    console.log('close');
     toDoBox.classList.remove("active");
 });
