@@ -44,11 +44,8 @@ function deleteToDo(e) {
     const deleteConfirm = confirm("Are you sure you want to delete?");
     if (deleteConfirm) {
         const li = e.target.parentElement.parentElement;
-
-        // 배열 속 오브젝트의 id와 li의 id를 비교하여 삭제
         toDos = toDos.filter(toDo => toDo.id !== parseInt(li.id));
         li.remove();
-
         saveToDos();
     }
     else {
