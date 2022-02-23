@@ -69,6 +69,7 @@ if (savedUsername === null) {
     
     // Block lucky when logout
     modalLuckyText.innerText = "Please Login";
+    modalLuckyText.style.userSelect = "none";
 
     // Block setting BTN when logout
     setting.classList.add(HIDDEN_CLASSNAME);
