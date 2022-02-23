@@ -140,7 +140,6 @@ html {
 /* TO DO LIST */
 .to-do-list {
     position: absolute;
-    display: none;
     width: 500px;
     height: 100%;
     padding: 30px 15px 30px 30px;

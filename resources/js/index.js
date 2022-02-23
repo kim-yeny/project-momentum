@@ -66,13 +66,15 @@ btnClose.forEach(function(e) {
     });
 });
 
-// Open To-Do-List when click to left side
-left.addEventListener("click", function() {
-    toDoBox.classList.add(ACTIVE_CLASSNAME);
-});
-
 // Close elements when click to center area
 center.addEventListener("click", function() {
     toDoBox.classList.remove(ACTIVE_CLASSNAME);
+    toDoBox.classList.add(HIDDEN_CLASSNAME);
     layerClose("lucky");
+});
+
+// Open To-Do-List when click to left side
+left.addEventListener("click", function() {
+    toDoBox.classList.remove(HIDDEN_CLASSNAME);
+    toDoBox.classList.add(ACTIVE_CLASSNAME);
 });
