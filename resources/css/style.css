@@ -12,6 +12,15 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'LeferiPoint-BlackA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-BlackA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* *********************************** */
+/* GLOBAL */
 :root {
     --main-color: red;
     --text-color: blue;
@@ -21,47 +30,51 @@
 html {
     background-color: whitesmoke;
     font-size: 20px;
+    user-select: none;
 }
 
 #wrap {
-    width: 100%;
-    height: 100vh;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100vh;
 }
 
 .grid {
     display: grid;
-
-    width: 99vw;
-    height: 98vh;
-    box-shadow: 0 0 5px #aaa;
-
     grid-template-columns: 50px 1fr 50px;
     grid-template-rows: 50px 1fr 50px;
     grid-template-areas: "top top top" "left center right" "bottom bottom bottom";
+    width: 99vw;
+    height: 98vh;
+    box-shadow: 0 0 5px #aaa;
 }
 
 .grid > div:not(.center) {
     background-color: #fff;
 }
 
-.top > div,
-.bottom {
+.bottom,
+.top > div {
     border: 3px solid var(--main-color);
 }
 
 .left > span,
-.to-do-list,
-.right > div {
+.right > div,
+.to-do-list {
     background-color: var(--main-color);
     color: var(--text-color);
 }
 
+.active {
+    display: flex;
+    flex-direction: column;
+}
+
+/* *********************************** */
 /* TOP */
 .top {
     display: grid;
-
     grid-area: top;
     grid-template-columns: 200px fit-content(500px) fit-content(500px) 1fr;
     font-family: 'SBAggroB';
@@ -77,20 +90,27 @@ html {
 
 .top div:last-child {
     justify-content: flex-end;
+    border-left: none;
     border-right: 3px solid var(--main-color);
+    color: var(--main-color);
     text-align: right;
 }
 
-.top #clock {
-    font-size: 1.7rem;
-    padding-top: 5px;
-    justify-content: center;
+.top div:last-child span {
+    cursor: pointer;
 }
 
+.top #clock {
+    justify-content: center;
+    padding-top: 5px;
+    font-size: 1.7rem;
+}
+
+/* *********************************** */
 /* LEFT */
 .left {
-    grid-area: left;
     position: relative;
+    grid-area: left;
     font-family: 'SBAggroB';
 }
 
@@ -99,51 +119,41 @@ html {
 }
 
 .left > span:first-of-type {
+    width: 100%;
     padding: 20px 10px;
     box-sizing: border-box;
-    text-align: center;
-    width: 100%;
-    word-break: break-all;
     font-size: 1.5rem;
+    text-align: center;
+    word-break: break-all;
 }
 
 .left > span:last-of-type {
     position: absolute;
     bottom: 20px;
     line-height: 50px;
+    font-family: 'SBAggroM';
     font-size: 0.7rem;
     writing-mode: vertical-rl;
-    font-family: 'SBAggroM';
     transform: rotate(180deg);
 }
 
+/* TO DO LIST */
 .to-do-list {
-    display: none;
     position: absolute;
-    /* width: 30vw; */
+    display: none;
     width: 500px;
     height: 100%;
     padding: 30px 15px 30px 30px;
     box-sizing: border-box;
-    z-index: 100;
     font-size: 1.7rem;
-}
-
-.active {
-    display: flex;
-    flex-direction: column;
-}
-
-.logout {
-    justify-content: center;
-    align-items: center;
+    z-index: 100;
 }
 
 #list {
     margin-top: 20px;
-    overflow-y: scroll;
     padding: 0 20px 0 0;
     box-sizing: border-box;
+    overflow-y: scroll;
 }
 
 #list::-webkit-scrollbar {
@@ -156,19 +166,17 @@ html {
 }
 
 #list li {
-    font-size: 1.2rem;
-    font-family: 'SBAggroM';
-
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
     align-items: center;
-
+    font-size: 1.2rem;
+    font-family: 'SBAggroM';
     word-wrap: break-word;
     word-break: break-all;
 }
 
 #list li span {
+    display: inline-block;
     width: 100%;
     padding: 10px 5px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -178,25 +186,31 @@ html {
     background-color: rgba(255, 255, 255, 0.3);
 }
 
+[contenteditable='true'] br {
+    display: none;
+}
+
 #list li div {
     min-width: fit-content;
     margin-left: 10px;
 }
 
 #list li button {
+    margin-left: 3px;
     background-color: transparent;
+    color: var(--text-sub-color);
     font-family: 'SBAggroB';
     font-size: 1rem;
-    color: var(--text-sub-color);
-    margin-left: 3px;
 }
 
+/* *********************************** */
 /* CENTER */
 .center {
+    position: relative;
     grid-area: center;
     justify-content: center;
     align-items: center;
-    position: relative;
+    font-family: 'LeferiPoint-BlackA';
 }
 
 .center img {
@@ -208,10 +222,9 @@ html {
 }
 
 .center span {
+    margin-bottom: 50px;
     font-size: 5rem;
     font-weight: bold;
-    margin-bottom: 50px;
-
     color: var(--text-sub-color);
 }
 
@@ -222,13 +235,13 @@ html {
 .center form input[type=text] {
     width: 400px;
     height: 47px;
+    padding: 0 10px;
     border: none;
+    border-bottom: 3px solid var(--main-color);
     background-color: transparent;
+    color: var(--text-sub-color);
     font-family: 'SBAggroM';
     font-size: 1.5rem;
-    color: var(--text-sub-color);
-    border-bottom: 3px solid var(--main-color);
-    padding: 0 10px;
 }
 
 .center form input[type=text]::placeholder {
@@ -239,51 +252,48 @@ html {
     background-color: rgba(255, 255, 255, 0.5);
 }
 
-#login-form input[type=submit] {
-    cursor: pointer;
-    border: none;
-
-    font-family: 'SBAggroB';
-    font-size: 1.2rem;
+.center form input[type=submit] {
     margin-left: 10px;
-
-    width: 120px;
-    height: 50px;
-
+    padding: 10px 20px;
+    border: none;
     background-color: var(--main-color);
     color: var(--text-color);
+    font-family: 'SBAggroB';
+    font-size: 1.2rem;
+    cursor: pointer;
 }
 
 #to-do-form input[type=text] {
-    text-align: center;
-    font-size: 1rem;
     margin-top: 50px;
+    font-size: 1rem;
+    text-align: center;
 }
 
+/* *********************************** */
 /* RIGHT */
 .right {
+    position: relative;
     grid-area: right;
     height: 100%;
-    overflow: hidden;
-    position: relative;
     font-family: 'SBAggroB';
+    overflow: hidden;
 }
 
 .right div {
+    position: absolute;
     display: block;
     height: 200%;
-    position: absolute;
     overflow: hidden;
     animation: movingText 7s linear infinite;
 }
 
 .right div span {
+    float: left;
     height: 25%;
     padding: 10px 0;
     box-sizing: border-box;
     line-height: 50px;
     writing-mode: vertical-lr;
-    float: left;
 }
 
 @keyframes movingText {
@@ -295,17 +305,104 @@ html {
     }
 }
 
+/* *********************************** */
 /* BOTTTOM */
 .bottom {
-    font-family: 'SBAggroM';
+    position: relative;
     grid-area: bottom;
     display: flex;
     align-items: flex-end;
     padding: 10px 20px;
     box-sizing: border-box;
+    font-family: 'SBAggroM';
 }
 
-.bottom span:last-child {
-    font-size: 0.7rem;
+.bottom .author {
     margin-left: 15px;
+    font-size: 0.7rem;
+}
+
+.bottom #setting {
+    position: absolute;
+    right: 15px;
+    bottom: 50%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--main-color);
+    color: #ccc;
+    font-size: 0.7rem;
+    transform: translateY(50%);
+    cursor: pointer;
+}
+
+/* *********************************** */
+/* MODAL */
+.modal {
+    position: fixed;
+    background-color: var(--main-color);
+    color: var(--text-color);
+    font-family: 'SBAggroM';
+    font-size: 1rem;
+    z-index: 100;
+}
+
+.btn-close {
+    position: relative;
+    font-size: 0.7rem;
+    opacity: 0.3;
+    cursor: pointer;
+    user-select: none;
+}
+
+.btn-close:hover:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-color);
+}
+
+/* MODAL - LUCKY */
+.layer-lucky {
+    top: 70px;
+    right: 70px;
+    flex-direction: row;
+    align-items: center;
+    padding: 15px 20px;
+    user-select: text;
+}
+
+.layer-lucky .btn-close {
+    margin-left: 30px;
+}
+
+/* MODAL - SETTING */
+.layer-setting {
+    flex-direction: column;
+    bottom: 70px;
+    right: 70px;
+}
+
+.layer-setting .btn-close {
+    align-self: flex-end;
+    width: fit-content;
+    margin: 15px 20px;
+}
+
+.layer-setting button {
+    display: block;
+    width: 100%;
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-color);
+    font-family: 'SBAggroM';
+    font-size: 1rem;
+    text-align: left;
+}
+
+.layer-setting button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
 }

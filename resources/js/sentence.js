@@ -1,7 +1,7 @@
 const sentences = [
+    'Have a good day',
     'No pain, No gain',
-    'Have a good day!',
-    'Good luck to you!',
+    'Love what you do',
     'Follow your heart',
     'Past is just past',
     'Life is a journey',

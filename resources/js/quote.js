@@ -90,8 +90,8 @@ const quotes = [
 ];
 
 // Get element from HTML
-const quote = document.querySelector('.bottom span:first-child');
-const author = document.querySelector('.bottom span:last-child');
+const quote = document.querySelector('.bottom .quote');
+const author = document.querySelector('.bottom .author');
 
 // Random quote
 const choseQoute = quotes[Math.floor(Math.random() * quotes.length)];

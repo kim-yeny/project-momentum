@@ -5,15 +5,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEW Momentum</title>
+    <title>* NEW Momentum *</title>
+    
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./resources/img/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" href="./resources/img/favicon.ico" />
+
+    <!-- CSS -->
     <link rel="stylesheet" href="./resources/css/default.css">
     <link rel="stylesheet" href="./resources/css/style.css">
-
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 
 <body>
+    <!-- (Modal) Today's lucky -->
+    <div class="modal hidden layer-lucky">
+        <span></span>
+    </div>
+    
+    <!-- (Modal) Setting -->
+    <div class="modal hidden layer-setting">
+        <button class="btn-change" onclick="changeName()">Change name</button>
+        <button class="btn-reset" onclick="reset()">Reset all</button>
+        <span class="btn-close">Close</span>
+    </div>
+
+    <!-- Contents -->
     <div id="wrap" class="flex">
         <div class="grid">
             <!-- Header -->
@@ -24,10 +40,8 @@
                     <span></span>
                     <span></span>
                 </div>
-                <div id="music">
-                    <span>
-                        MUSIC PLAYER
-                    </span>
+                <div id="lucky" onclick="layerOpen('lucky')">
+                    <span>Good luck today!</span>
                 </div>
             </div>
 
@@ -43,19 +57,25 @@
 
             <!-- Main -->
             <div class="center flex">
-                <!-- LOGIN -->
+                <!-- Login -->
                 <form id="login-form" class="hidden">
-                    <input required maxlength="15" type="text" placeholder="What's your name?" />
+                    <input required maxlength="20" type="text" placeholder="What's your name?" />
                     <input type="submit" value="Login">
                 </form>
                 
-                <!-- GREETING and TODO ENTER -->
+                <!-- Greeting and To do input -->
                 <div class="hidden">
-                    <span id="greeting">Greeting</span>
+                    <span id="greeting"></span>
                     <form id="to-do-form">
-                        <input type="text" maxlength="50" placeholder="Write a To Do and Press Enter" required>
+                        <input type="text" placeholder="Write a To Do and Press Enter" required>
                     </form>
                 </div>
+
+                <!-- Change name -->
+                <form id="name-form" class="hidden">
+                    <input required maxlength="20" type="text" placeholder="What's your name?" />
+                    <input type="submit" value="Change">
+                </form>
             </div>
 
             <!-- Sentence -->
@@ -67,8 +87,9 @@
 
             <!-- Quote -->
             <div class="bottom">
-                <span></span>
-                <span></span>
+                <span class="quote"></span>
+                <span class="author"></span>
+                <span id="setting" onclick="layerOpen('setting')"></span>
             </div>
         </div>
     </div>
@@ -78,6 +99,7 @@
 <script src="./resources/js/color.js"></script>
 <script src="./resources/js/background.js"></script>
 <script src="./resources/js/todo.js"></script>
+<script src="./resources/js/lucky.js"></script>
 <script src="./resources/js/greetings.js"></script>
 <script src="./resources/js/clock.js"></script>
 <script src="./resources/js/sentence.js"></script>
