@@ -22,9 +22,18 @@
 /* *********************************** */
 /* GLOBAL */
 :root {
+    /* COLOR */
     --main-color: none;
     --text-color: none;
     --text-sub-color: none;
+
+    /* FONT SIZE */
+    --font-size-great: 5rem;
+    --font-size-bigger: 1.7rem;
+    --font-size-big: 1.5rem;
+    --font-size-semi-big: 1.2rem;
+    --font-size-normal: 1rem;
+    --font-size-small: 0.7rem;
 }
 
 html {
@@ -107,7 +116,7 @@ html {
 .top #clock {
     justify-content: center;
     padding-top: 5px;
-    font-size: 1.7rem;
+    font-size: var(--font-size-bigger);
 }
 
 /* *********************************** */
@@ -126,7 +135,7 @@ html {
     width: 100%;
     padding: 20px 10px;
     box-sizing: border-box;
-    font-size: 1.5rem;
+    font-size: var(--font-size-big);
     text-align: center;
     word-break: break-all;
 }
@@ -136,7 +145,7 @@ html {
     bottom: 20px;
     line-height: 50px;
     font-family: 'SBAggroM';
-    font-size: 0.7rem;
+    font-size: var(--font-size-small);
     writing-mode: vertical-rl;
     transform: rotate(180deg);
 }
@@ -148,7 +157,7 @@ html {
     height: 100%;
     padding: 30px 15px 30px 30px;
     box-sizing: border-box;
-    font-size: 1.7rem;
+    font-size: var(--font-size-bigger);
     z-index: 100;
 }
 
@@ -172,7 +181,7 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 1.2rem;
+    font-size: var(--font-size-semi-big);
     font-family: 'SBAggroM';
     word-wrap: break-word;
     word-break: break-all;
@@ -203,7 +212,7 @@ html {
     background-color: transparent;
     color: var(--text-sub-color);
     font-family: 'SBAggroB';
-    font-size: 1rem;
+    font-size: var(--font-size-normal);
 }
 
 /* *********************************** */
@@ -226,9 +235,9 @@ html {
 
 .center span {
     margin-bottom: 50px;
-    font-size: 5rem;
-    font-weight: bold;
     color: var(--text-sub-color);
+    font-size: var(--font-size-great);
+    font-weight: bold;
 }
 
 .center > div {
@@ -244,7 +253,7 @@ html {
     background-color: transparent;
     color: var(--text-sub-color);
     font-family: 'SBAggroM';
-    font-size: 1.5rem;
+    font-size: var(--font-size-big);
 }
 
 .center form input[type=text]::placeholder {
@@ -262,13 +271,13 @@ html {
     background-color: var(--main-color);
     color: var(--text-color);
     font-family: 'SBAggroB';
-    font-size: 1.2rem;
+    font-size: var(--font-size-semi-big);
     cursor: pointer;
 }
 
 #to-do-form input[type=text] {
     margin-top: 50px;
-    font-size: 1rem;
+    font-size: var(--font-size-normal);
     text-align: center;
 }
 
@@ -322,7 +331,7 @@ html {
 
 .bottom .author {
     margin-left: 15px;
-    font-size: 0.7rem;
+    font-size: var(--font-size-small);
 }
 
 .bottom #setting {
@@ -334,7 +343,7 @@ html {
     border-radius: 50%;
     background-color: var(--main-color);
     color: #ccc;
-    font-size: 0.7rem;
+    font-size: var(--font-size-small);
     transform: translateY(50%);
     cursor: pointer;
 }
@@ -346,13 +355,13 @@ html {
     background-color: var(--main-color);
     color: var(--text-color);
     font-family: 'SBAggroM';
-    font-size: 1rem;
+    font-size: var(--font-size-normal);
     z-index: 100;
 }
 
 .btn-close {
     position: relative;
-    font-size: 0.7rem;
+    font-size: var(--font-size-small);
     opacity: 0.3;
     cursor: pointer;
     user-select: none;
@@ -402,7 +411,7 @@ html {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     color: var(--text-color);
     font-family: 'SBAggroM';
-    font-size: 1rem;
+    font-size: var(--font-size-normal);
     text-align: left;
 }
 
@@ -424,6 +433,13 @@ html {
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
-        color: red;
+        font-family: 'LeferiPoint-BlackA';
+        width: fit-content;
+        padding: 20px;
+    }
+
+    #warning p {
+        margin-top: 10px;
+        font-size: var(--font-size-small);
     }
 }
