@@ -41,7 +41,7 @@ function editToDo(e) {
 
 function toDoEnterKey(e) {
     if (window.event.keyCode == 13) {
-        // Contenteditable's <div> remove
+        // Contenteditable"s <div> remove
         const spansDiv = e.childNodes[1];
         spansDiv.remove();
 

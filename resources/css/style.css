@@ -14,7 +14,7 @@
 
 @font-face {
     font-family: 'LeferiPoint-BlackA';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-BlackA.woff') format('woff');
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-BlackA.woff") format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -22,9 +22,9 @@
 /* *********************************** */
 /* GLOBAL */
 :root {
-    --main-color: red;
-    --text-color: blue;
-    --text-sub-color: green;
+    --main-color: none;
+    --text-color: none;
+    --text-sub-color: none;
 }
 
 html {
@@ -69,6 +69,10 @@ html {
 .active {
     display: flex;
     flex-direction: column;
+}
+
+#warning {
+    display: none;
 }
 
 /* *********************************** */
@@ -404,4 +408,22 @@ html {
 
 .layer-setting button:hover {
     background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* *********************************** */
+/* Responsive ver. */
+@media(max-width : 1024px) {
+    #wrap {
+        display: none;
+    }
+
+    #warning {
+        display: block;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: red;
+    }
 }
