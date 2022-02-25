@@ -71,6 +71,14 @@ const colors = [
         back: "#1A2359",
         text: "#fff"
     },
+    {
+        back: "#3F4BB7",
+        text: "#fff"
+    },
+    {
+        back: "#FFDC66",
+        text: "#000"
+    },
 ];
 
 // Random color
