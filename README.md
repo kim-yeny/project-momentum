@@ -1,7 +1,7 @@
 # Single web project
 
 
-### ✨🎭 Momentum 클론코딩
+### ✨ Momentum 클론코딩
 
 구글 크롬(Chrome)의 확장프로그램인 '모멘텀(Momentum)'을 클론코딩하였습니다. 자바스크립트로 모멘텀의 기본 기능을 재현하고, UI 디자인을 새롭게 재구성하여 퍼블리싱하였습니다.
 
